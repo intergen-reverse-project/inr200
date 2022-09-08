@@ -1,0 +1,486 @@
+Public Sub checkNewSection() 'D85E40
+  Dim var_A4 As Variant
+  Dim var_C0 As Variant
+  Dim var_A8 As Variant
+  Dim var_AC As Variant
+  Dim var_178 As ListBox
+  Dim var_11C As Me
+  Dim global_00D9F634 As Form
+  loc_00D85F8B: var_54 = False
+  loc_00D85F98: On Error GoTo loc_00D89D6C
+  loc_00D85FF7: If (CInt(frmInputMod.SSTab1.Tab) <> 3) = 0 Then
+  loc_00D86035:   Set var_A8 = frmInputMod.txtPipes(0)
+  loc_00D86052:   var_180 = var_A8
+  loc_00D860F1:   var_8008 = (frmInputMod.txtPipes(1).Text = global_0041CA38)
+  loc_00D86149:   If (var_A8.Text = global_0041CA38) + 1 Then
+  loc_00D861A7:     Set var_A4 = frmErrorSec.List1
+  loc_00D861AC:     var_178 = var_A4
+  loc_00D861DA:     var_A4.AddItem "No data selected - either enter a new data line", 10
+  loc_00D86212:     var_3C = " or select an existing data line to edit"
+  loc_00D8624C:     Set var_A4 = frmErrorSec.List1
+  loc_00D86251:     var_178 = var_A4
+  loc_00D8627C:     var_A4.AddItem var_3C, var_120
+  loc_00D86286:     If var_A4.AddItem var_3C, var_120 < 0 Then
+  loc_00D862A1:     Else
+  loc_00D862CA:       var_128 = global_00D9F246(1)
+  loc_00D8630A:       For var_30 = 1 To global_00D9F246(1) Step 1
+  loc_00D86316:         If var_30 Then
+  loc_00D8632A:           var_118 = %x1 = global_000A.MousePointer
+  loc_00D8634A:           var_128 = (ebx+0000009Ah = global_00FFFFFF)
+  loc_00D86387:           var_8020 = CBool((var_30 = %x1 = global_000A.MousePointer) And (ebx+0000009Ah = global_00FFFFFF))
+  loc_00D8639D:           If var_8020 = 0 Then
+  loc_00D863AD:             global_00425180 = 0000000Ah.UnkVCall_00000474h
+  loc_00D863CE:             Set var_A8 = 0000000Ah.UnkVCall_00000474h(1)
+  loc_00D863E7:             var_180 = var_A8
+  loc_00D863F4:             var_78 = var_A8.FontName
+  loc_00D86427:             If CLng(var_30) >= 501 Then
+  loc_00D86429:               var_8028 = Err.Raise
+  loc_00D8642E:             End If
+  loc_00D86445:             If global_00D9F198 = 0 Then
+  loc_00D8644C:             Else
+  loc_00D8644E:             End If
+  loc_00D86473:             If esi Then
+  loc_00D86483:               var_802C = 0000000Ah.UnkVCall_00000474h
+  loc_00D86491:               Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D864BD:               var_180 = var_A8
+  loc_00D864CA:               var_78 = var_A8.MousePointer
+  loc_00D864FD:               If CLng(var_30) >= 501 Then
+  loc_00D864FF:                 var_8034 = Err.Raise
+  loc_00D86504:               End If
+  loc_00D8651B:               If global_00D9F198 = 0 Then
+  loc_00D86522:               Else
+  loc_00D86524:               End If
+  loc_00D86549:               If esi Then
+  loc_00D86559:                 var_8038 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86567:                 Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86593:                 var_180 = var_A8
+  loc_00D865C5:                 var_803C = 0000000Ah.UnkVCall_00000474h
+  loc_00D865D3:                 Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D86662:                 var_3C = "Duplicate sections " & var_A8.MousePointer & " - " & frmInputMod.txtPipes(1).MousePointer
+  loc_00D866C8:                 var_54 = True
+  loc_00D866E8:               Else
+  loc_00D866F7:                 If %x1 = global_000A.FontStrikethru Then GoTo loc_00D86A14
+  loc_00D86707:                 var_804C = 0000000Ah.UnkVCall_00000474h
+  loc_00D86715:                 Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86741:                 var_180 = var_A8
+  loc_00D86773:                 var_8050 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86781:                 Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D867E4:                 If CLng(var_30) >= 501 Then
+  loc_00D867E6:                   var_8058 = Err.Raise
+  loc_00D867EB:                 End If
+  loc_00D867FC:                 If CLng(var_30) >= 501 Then
+  loc_00D867FE:                   var_8060 = Err.Raise
+  loc_00D86803:                 End If
+  loc_00D86884:                 var_8078 = "Sections " & var_A8.MousePointer & " - " & frmInputMod.txtPipes(1).MousePointer & " and " & CStr(00007D4h)
+  loc_00D868F4:                 var_3C = var_8078 & " - " & CStr(0000FA8h) & " with same end node"
+  loc_00D86980:               End If
+  loc_00D869AE:               Set var_A4 = frmErrorSec.List1
+  loc_00D869B3:               var_178 = var_A4
+  loc_00D869E2:               var_A4.AddItem var_3C, 10
+  loc_00D86A14:             End If
+  loc_00D86A14:           End If
+  loc_00D86A2D:         Next var_30
+  loc_00D86A35:         GoTo loc_00D86314
+  loc_00D86A3A:       End If
+  loc_00D86A42:       On Error GoTo loc_00D89BFC
+  loc_00D86A51:       var_8090 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86A5F:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86A8B:       var_180 = var_A8
+  loc_00D86A98:       var_78 = var_A8.MousePointer
+  loc_00D86ACB:       If  > global_0040A308 Then
+  loc_00D86AD2:       Else
+  loc_00D86AD4:       End If
+  loc_00D86AF9:       If esi Then
+  loc_00D86B18:         var_8094 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86B26:         Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86B52:         var_180 = var_A8
+  loc_00D86B84:         var_8098 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86B92:         Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D86C17:         var_80A4 = "Section start point may not be greater than 300. Section " & var_A8.MousePointer & " - " & frmInputMod.txtPipes(1).MousePointer
+  loc_00D86C9B:         Set var_A4 = frmErrorSec.List1
+  loc_00D86CA0:         var_178 = var_A4
+  loc_00D86CCF:         var_A4.AddItem var_80A4, 10
+  loc_00D86D01:       End If
+  loc_00D86D0B:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D86D19:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86D45:       var_180 = var_A8
+  loc_00D86D52:       var_78 = var_A8.MousePointer
+  loc_00D86D85:       If  >= global_0040A300 Then
+  loc_00D86D8C:       Else
+  loc_00D86D8E:       End If
+  loc_00D86DB3:       If esi Then
+  loc_00D86E11:         Set var_A4 = frmErrorSec.List1
+  loc_00D86E16:         var_178 = var_A4
+  loc_00D86E45:         var_A4.AddItem "End point for section must be less than 499.", 10
+  loc_00D86E77:       End If
+  loc_00D86E81:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D86E8F:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86EBB:       var_180 = var_A8
+  loc_00D86EC8:       var_78 = var_A8.MousePointer
+  loc_00D86F07:       GoTo loc_00D86F10
+  loc_00D86F13:       var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D86F21:       Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D86F56:       var_7C = frmInputMod.txtPipes(1).MousePointer
+  loc_00D86F89:       GoTo loc_00D86F8D
+  loc_00D86FD1:       If (esi Or var_24C) Then
+  loc_00D8702F:         Set var_A4 = frmErrorSec.List1
+  loc_00D87034:         var_178 = var_A4
+  loc_00D87063:         var_A4.AddItem "Invalid pipe node.  Pipe section ID must be an integer greater than zero.", 10
+  loc_00D87095:       End If
+  loc_00D8709F:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D870AD:       Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D870D9:       var_180 = frmInputMod.txtPipes(1)
+  loc_00D870E6:       var_7C = frmInputMod.txtPipes(1).MousePointer
+  loc_00D87119:       var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87127:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87181:       fabs
+  loc_00D8718D:       var_80B4 = CDbl(Val(var_A8.MousePointer))
+  loc_00D871AC:       If CDbl(Val(var_7C)) < var_7C Then
+  loc_00D871B3:       Else
+  loc_00D871B5:       End If
+  loc_00D871EF:       If esi Then
+  loc_00D871FF:         var_114 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8720D:         Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87239:         var_180 = var_A8
+  loc_00D8726B:         var_114 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87279:         Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D872FE:         var_80C4 = "Elevation change is greater than total length of section " & var_A8.MousePointer & " - " & frmInputMod.txtPipes(1).MousePointer
+  loc_00D87391:         Set var_A4 = frmErrorSec.List1
+  loc_00D87396:         var_178 = var_A4
+  loc_00D873C5:         var_A4.AddItem var_80C4, 10
+  loc_00D873F7:       End If
+  loc_00D87401:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D8740F:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8743B:       var_180 = var_A8
+  loc_00D87448:       var_78 = var_A8.MousePointer
+  loc_00D8747B:       If  < global_004056D0 Then
+  loc_00D87482:       Else
+  loc_00D87484:       End If
+  loc_00D874A9:       If esi Then
+  loc_00D87507:         Set var_A4 = frmErrorSec.List1
+  loc_00D8750C:         var_178 = var_A4
+  loc_00D8753B:         var_A4.AddItem "Negative value for number of elbows.", 10
+  loc_00D8756D:       End If
+  loc_00D87577:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D87585:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D875B1:       var_180 = var_A8
+  loc_00D875F6:       If CDbl(Val(var_A8.MousePointer)) < global_004056D0 Then
+  loc_00D87604:       Else
+  loc_00D8760B:       End If
+  loc_00D8760E:       var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8761C:       Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D87684:       If CDbl(Val(frmInputMod.txtPipes(1).MousePointer)) < global_004056D0 Then
+  loc_00D8768B:       Else
+  loc_00D8768D:       End If
+  loc_00D876D1:       If (esi Or var_258) Then
+  loc_00D8772F:         Set var_A4 = frmErrorSec.List1
+  loc_00D87734:         var_178 = var_A4
+  loc_00D87763:         var_A4.AddItem "Negative value for number of tees.", 10
+  loc_00D87795:       End If
+  loc_00D8779F:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D877AD:       Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D877D9:       var_180 = frmInputMod.txtPipes(1)
+  loc_00D87819:       var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87827:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8789F:       If CDbl((Val(var_A8.MousePointer) + Val(frmInputMod.txtPipes(1).MousePointer))) > global_00401420 Then
+  loc_00D878A6:       Else
+  loc_00D878A8:       End If
+  loc_00D878E2:       If esi Then
+  loc_00D87933:         var_80E0 = CDbl(Val(frmErrorSec.Label1.MousePointer))
+  loc_00D87941:         If var_80E0 = global_004056D0 Then
+  loc_00D87948:         Else
+  loc_00D8794A:         End If
+  loc_00D8796D:         If var_180 Then
+  loc_00D879CB:           Set var_A4 = frmErrorSec.List1
+  loc_00D879D0:           var_178 = var_A4
+  loc_00D879FF:           var_A4.AddItem "Section may not have more than 1 tee.", 10
+  loc_00D87A31:         End If
+  loc_00D87A31:       End If
+  loc_00D87A3B:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D87A49:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87A75:       var_180 = var_A8
+  loc_00D87A82:       var_78 = var_A8.MousePointer
+  loc_00D87AB5:       If  < global_004056D0 Then
+  loc_00D87ABC:       Else
+  loc_00D87ABE:       End If
+  loc_00D87AE3:       If esi Then
+  loc_00D87B41:         Set var_A4 = frmErrorSec.List1
+  loc_00D87B46:         var_178 = var_A4
+  loc_00D87B75:         var_A4.AddItem "Negative value for number of couplings or unions.", 10
+  loc_00D87BA7:       End If
+  loc_00D87BB1:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D87BBF:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87BEB:       var_180 = var_A8
+  loc_00D87BF8:       var_78 = var_A8.MousePointer
+  loc_00D87C1D:       var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87C2B:       Set var_AC = 0000000Ah.UnkVCall_00000474h
+  loc_00D87C93:       If CDbl(Val(frmInputMod.txtPipes(1).MousePointer)) < global_004056D0 Then
+  loc_00D87C9A:       Else
+  loc_00D87C9C:       End If
+  loc_00D87CA4:       var_80F0 = (var_78 = global_00423F6C)
+  loc_00D87CEF:       If edi Then
+  loc_00D87D4D:         Set var_A4 = frmErrorSec.List1
+  loc_00D87D52:         var_178 = var_A4
+  loc_00D87D81:         var_A4.AddItem "Negative value for equivalent length.", 10
+  loc_00D87DAE:       End If
+  loc_00D87DB8:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D87DC6:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D87DF6:       var_180 = var_A8
+  loc_00D87E03:       var_78 = var_A8.MousePointer
+  loc_00D87E36:       If  > global_0040A308 Then
+  loc_00D87E3D:       Else
+  loc_00D87E3F:       End If
+  loc_00D87E42:       var_118 = 0000000Ah.UnkVCall_00000468h
+  loc_00D87E91:       If CDbl(Val(0000000Ah.UnkVCall_00000468h.MousePointer)) <= global_004056D0 Then
+  loc_00D87E98:       Else
+  loc_00D87E9A:       End If
+  loc_00D87ED1:       If edi Then
+  loc_00D87EE0:         var_114 = 0000000Ah.UnkVCall_00000444h
+  loc_00D87EEE:         Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D87F1D:         var_180 = var_A8
+  loc_00D87F83:         If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D87F94:           var_3C = "Quantity to be discharged must be given for nozzle."
+  loc_00D87F99:         End If
+  loc_00D87FA3:         var_114 = 0000000Ah.UnkVCall_00000444h
+  loc_00D87FB1:         Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D87FE1:         var_180 = var_A8
+  loc_00D8803B:         If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D8804C:           var_3C = "Orifice diameter must be given for nozzle."
+  loc_00D88051:         End If
+  loc_00D8805B:         var_118 = 0000000Ah.UnkVCall_00000444h
+  loc_00D88069:         Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D88099:         var_180 = var_A8
+  loc_00D880F3:         If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D88104:           var_3C = "Nozzle flow rate must be specified."
+  loc_00D88109:         End If
+  loc_00D8814D:         Set var_A4 = frmErrorSec.List1
+  loc_00D88152:         var_178 = var_A4
+  loc_00D88181:         var_A4.AddItem var_3C, 10
+  loc_00D881AE:       End If
+  loc_00D881B8:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D881C6:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D881F6:       var_180 = var_A8
+  loc_00D88203:       var_78 = var_A8.MousePointer
+  loc_00D88236:       If  < global_0040A8B8 Then
+  loc_00D8823D:       Else
+  loc_00D8823F:       End If
+  loc_00D88242:       var_118 = 0000000Ah.UnkVCall_00000468h
+  loc_00D8825E:       var_7C = 0000000Ah.UnkVCall_00000468h.MousePointer
+  loc_00D8828C:       If  <> global_004056D0 Then
+  loc_00D88293:       Else
+  loc_00D88295:       End If
+  loc_00D882CE:       If esi Then
+  loc_00D882DE:         var_114 = 0000000Ah.UnkVCall_00000474h
+  loc_00D882EC:         Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8831C:         var_180 = var_A8
+  loc_00D88385:         If (var_A8.MousePointer = global_00423F6C) Then
+  loc_00D88395:           var_114 = 0000000Ah.UnkVCall_00000468h
+  loc_00D883E4:           If CDbl(Val(0000000Ah.UnkVCall_00000468h.MousePointer)) <> global_004056D0 Then
+  loc_00D883EB:           Else
+  loc_00D883ED:           End If
+  loc_00D88410:           If var_180 Then
+  loc_00D88420:             var_114 = 0000000Ah.UnkVCall_00000444h
+  loc_00D8842E:             Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D8845E:             var_180 = var_A8
+  loc_00D884BD:             If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D884CE:               var_3C = "INERGEN Quantity should be zero for section without a nozzle."
+  loc_00D884D3:             End If
+  loc_00D884DD:             var_114 = 0000000Ah.UnkVCall_00000444h
+  loc_00D884EB:             Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D8851B:             var_180 = var_A8
+  loc_00D88574:             If (var_A8.CurrentX = 0) Then
+  loc_00D88585:               var_3C = "Orifice diameter must zero for section without a nozzle."
+  loc_00D8858A:             End If
+  loc_00D88594:             var_118 = 0000000Ah.UnkVCall_00000444h
+  loc_00D885A2:             Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D885D2:             var_180 = var_A8
+  loc_00D8862C:             If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D8863D:               var_3C = "Nozzle flow rate must be zero for section without a nozzle."
+  loc_00D88642:             End If
+  loc_00D88686:             Set var_A4 = frmErrorSec.List1
+  loc_00D8868B:             var_178 = var_A4
+  loc_00D886BA:             var_A4.AddItem var_3C, 10
+  loc_00D886E7:           End If
+  loc_00D886E7:         End If
+  loc_00D886E7:       End If
+  loc_00D886F1:       var_11C = 0000000Ah.UnkVCall_00000444h
+  loc_00D886FF:       Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D8872F:       var_180 = var_A8
+  loc_00D8878D:       If (var_A8.CurrentX = global_00FFFFFF) Then
+  loc_00D8879D:         var_118 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D887E4:         var_114 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D887F2:         Set var_A8 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D887F9:         var_180 = var_A8
+  loc_00D8885D:         If ((var_A8.ScaleLeft = 0) And (0000000Ah.UnkVCall_000004ACh.ScaleLeft = 0)) Then
+  loc_00D888AC:           Set var_A4 = frmErrorSec.List1
+  loc_00D888B1:           var_178 = var_A4
+  loc_00D888E0:           var_A4.AddItem "Pipe size and type of pipe must be specified for all sections in a Fixed", 10
+  loc_00D88965:           Set var_A4 = frmErrorSec.List1
+  loc_00D8896A:           var_178 = var_A4
+  loc_00D88999:           var_A4.AddItem " Nozzle system.", 10
+  loc_00D889CB:         End If
+  loc_00D889D5:         var_11C = 0000000Ah.UnkVCall_000004ACh
+  loc_00D88A10:         var_118 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D88A1E:         Set var_A8 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D88A25:         var_180 = var_A8
+  loc_00D88A89:         If ((var_A8.ScaleLeft) And (0000000Ah.UnkVCall_000004ACh.ScaleLeft = 0)) Then
+  loc_00D88AD8:           Set var_A4 = frmErrorSec.List1
+  loc_00D88ADD:           var_178 = var_A4
+  loc_00D88B0C:           var_A4.AddItem "Pipe size must be specified for all sections in a Fixed Nozzle system.", 10
+  loc_00D88B4D:         End If
+  loc_00D88B57:         var_11C = 0000000Ah.UnkVCall_000004ACh
+  loc_00D88B92:         var_118 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D88BA0:         Set var_A8 = 0000000Ah.UnkVCall_0000044Ch
+  loc_00D88BA7:         var_180 = var_A8
+  loc_00D88C0B:         If ((var_A8.ScaleLeft = 0) And (0000000Ah.UnkVCall_000004ACh.ScaleLeft)) Then
+  loc_00D88C5A:           Set var_A4 = frmErrorSec.List1
+  loc_00D88C5F:           var_178 = var_A4
+  loc_00D88C8E:           var_A4.AddItem "Type of pipe must be specified for all sections in a Fixed Nozzle system.", 10
+  loc_00D88D04:           Set var_A4 = frmErrorSec.List1
+  loc_00D88D09:           var_178 = var_A4
+  loc_00D88D38:           var_A4.AddItem " Change DFLT type to the specific schedule to be used.", 10
+  loc_00D88D74:         End If
+  loc_00D88D74:       End If
+  loc_00D88D9C:       var_64 = False
+  loc_00D88DAB:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D88DB9:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D88DE9:       var_180 = var_A8
+  loc_00D88E53:       If (var_A8.MousePointer = global_00423F6C) + 1 Then
+  loc_00D88EB3:         For var_30 = 2 To 7 Step 1
+  loc_00D88EBD:           If var_30 Then
+  loc_00D88ECD:             var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D88EDB:             Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D88EEF:             var_8124 = CInt(var_30)
+  loc_00D88F13:             var_180 = var_A8
+  loc_00D88F58:             If CDbl(Val(var_A8.MousePointer)) <> global_004056D0 Then
+  loc_00D88F5F:             Else
+  loc_00D88F61:             End If
+  loc_00D88F88:             If esi Then
+  loc_00D88FAB:               var_64 = True
+  loc_00D88FB0:             End If
+  loc_00D88FC9:           Next var_30
+  loc_00D88FCE:           GoTo loc_00D88EB8
+  loc_00D88FD3:         End If
+  loc_00D88FFE:         If (var_64 = True) Then
+  loc_00D89034:           var_118 = "Pipe length, elevation change, pipe fittings are not permitted in Manifold Orifice section.  Clear length, elevation, fittings from this section?"
+  loc_00D89054:           var_C0 = var_118
+  loc_00D89077:           MsgBox(var_C0, 36, var_D0, var_E0, var_F0)
+  loc_00D89095:           var_74 = MsgBox(var_C0, 36, var_D0, var_E0, var_F0)
+  loc_00D890EE:           If (var_74 = 6) Then
+  loc_00D8914E:             For var_30 = 2 To 7 Step 1
+  loc_00D89155:               If var_30 Then
+  loc_00D89165:                 var_1D4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D89173:                 Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D89187:                 var_8134 = CInt(var_30)
+  loc_00D891AB:                 var_180 = var_A8
+  loc_00D891B9:                 var_A8.MousePointer = global_004240A4
+  loc_00D8920E:               Next var_30
+  loc_00D89213:               GoTo loc_00D89153
+  loc_00D89218:             End If
+  loc_00D89218:           End If
+  loc_00D89246:           If (var_74 = 7) Then
+  loc_00D89295:             Set var_A4 = frmErrorSec.List1
+  loc_00D8929A:             var_178 = var_A4
+  loc_00D892C9:             var_A4.AddItem "Pipe length, elevation change, pipe fittings are not permitted in a Manifold", 10
+  loc_00D8934E:             Set var_A4 = frmErrorSec.List1
+  loc_00D89353:             var_178 = var_A4
+  loc_00D89382:             var_A4.AddItem " Orifice section.", 10
+  loc_00D893B2:           End If
+  loc_00D893B2:         End If
+  loc_00D893B2:       End If
+  loc_00D893D3:       var_64 = False
+  loc_00D893ED:       var_11C = 0000000Ah.UnkVCall_00000474h
+  loc_00D893FB:       Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D8942B:       var_180 = var_A8
+  loc_00D89492:       If (var_A8.MousePointer = global_00423F6C) + 1 Then
+  loc_00D894BE:         var_128 = global_00D9F246(1)
+  loc_00D894FE:         For var_30 = 1 To global_00D9F246(1) Step 1
+  loc_00D89505:           If var_30 Then
+  loc_00D89515:             var_118 = 0000000Ah.UnkVCall_00000474h
+  loc_00D89523:             Set var_A4 = 0000000Ah.UnkVCall_00000474h
+  loc_00D89553:             var_180 = var_A8
+  loc_00D89560:             var_78 = var_A8.MousePointer
+  loc_00D89593:             If CLng(var_30) >= 501 Then
+  loc_00D89595:               var_814C = Err.Raise
+  loc_00D8959A:             End If
+  loc_00D895B1:             If global_00D9F198 = 0 Then
+  loc_00D895B8:             Else
+  loc_00D895BA:             End If
+  loc_00D895DF:             If esi = 0 Then
+  loc_00D895FA:             Next var_30
+  loc_00D895FF:             GoTo loc_00D89503
+  loc_00D89604:           End If
+  loc_00D8961C:           If CLng(var_30) >= 501 Then
+  loc_00D8961E:             var_8154 = Err.Raise
+  loc_00D89623:           End If
+  loc_00D89626:           var_214 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D89634:           Set var_A4 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D8963B:           var_180 = var_A4
+  loc_00D89648:           var_78 = var_A4.FontName
+  loc_00D89668:           var_224 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D89676:           Set var_A8 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D896B3:           var_8158 = (eax+edi*4+000007D4h = var_78)
+  loc_00D896F5:           If ((eax+edi*4+000007D4h = var_78) And (var_A8.ScaleLeft)) Then
+  loc_00D89705:             var_114 = 0000000Ah.UnkVCall_00000444h
+  loc_00D89713:             Set var_A4 = 0000000Ah.UnkVCall_00000444h
+  loc_00D89726:             var_A4.UnkVCall_00000040h
+  loc_00D89743:             var_180 = var_A8
+  loc_00D897A1:             If (var_A4.CurrentX = global_00FFFFFF) Then
+  loc_00D897C4:               var_64 = True
+  loc_00D897CB:             Else
+  loc_00D897D5:               var_A4 = 0000000Ah.UnkVCall_000004ACh
+  loc_00D897EF:               0000000Ah.UnkVCall_000004ACh.ScaleLeft = 0
+  loc_00D89817:             End If
+  loc_00D89817:           End If
+  loc_00D89822:         End If
+  loc_00D89835:         If var_40 = global_00FFFFFF Then
+  loc_00D89884:           Set var_A4 = frmErrorSec.List1
+  loc_00D89889:           var_178 = var_A4
+  loc_00D898B8:           var_A4.AddItem "No feed section found for manifold orifice.  Please enter the feed section", 10
+  loc_00D8993D:           Set var_A4 = frmErrorSec.List1
+  loc_00D89942:           var_178 = var_A4
+  loc_00D89971:           var_A4.AddItem "  before entering the manifold orifice.", 10
+  loc_00D8999E:         End If
+  loc_00D899C9:         If (var_64 = True) Then
+  loc_00D89A18:           Set var_A4 = frmErrorSec.List1
+  loc_00D89A1D:           var_178 = var_A4
+  loc_00D89A4C:           var_A4.AddItem "Pipe size for manifold orifice must match the pipe size for its feed section.", 10
+  loc_00D89A88:         End If
+  loc_00D89A88:       End If
+  loc_00D89A97:       If %x1 = global_000A.FontStrikethru = global_00FFFFFF Then
+  loc_00D89AC1:         var_178 = global_00D9F634
+  loc_00D89B10:         var_8170 = frmErrorSec.Show 1, var_11C
+  loc_00D89B5D:         If (var_54 = False) Then
+  loc_00D89B69:           var_118 = 0000000Ah.UnkVCall_00000458h
+  loc_00D89B83:           0000000Ah.UnkVCall_00000458h.Height = NAN
+  loc_00D89BAB:         End If
+  loc_00D89BB5:         var_114 = 0000000Ah.UnkVCall_00000460h
+  loc_00D89BC3:         Set var_A4 = 0000000Ah.UnkVCall_00000460h
+  loc_00D89BCF:         var_A4.Height = NAN
+  loc_00D89BD9:         If var_A4 < 0 Then
+  loc_00D89BE6:         End If
+  loc_00D89BE7:         var_A4 = CheckObj(var_A4, global_0041D714, 140)
+  loc_00D89BEC:       End If
+  loc_00D89BEC:     End If
+  loc_00D89BF7:     GoTo loc_00D89E5C
+  loc_00D89BFC:     ' Referenced from: 00D86A42
+  loc_00D89C03:     var_8178 = Err
+  loc_00D89C10:     Set var_A4 = Err
+  loc_00D89C60:     If (Err.Number = 13) Then
+  loc_00D89D0F:       MsgBox("All data for the pipe section must be specified." & Chr(13) & "Blank entries are not permitted.", 0, 10, 10, 10)
+  loc_00D89D48:     End If
+  loc_00D89D62:     On Error GoTo 0
+  loc_00D89D67:     GoTo loc_00D89E5C
+  loc_00D89D6C:     ' Referenced from: 00D85F98
+  loc_00D89D9F:     var_817C = Err
+  loc_00D89DAC:     Set var_A4 = Err
+  loc_00D89E0C:     MsgBox(Err.Description & " in checking pipe section data", 0, 10, 10, 10)
+  loc_00D89E5C:   End If
+  loc_00D89E5C: End If
+  loc_00D89E5C: ' Referenced from: 00D89BF7
+  loc_00D89E5C: ' Referenced from: 00D89D67
+  loc_00D89E5C: Exit Sub
+  loc_00D89E67: GoTo loc_00D89F12
+  loc_00D89F11: Exit Sub
+  loc_00D89F12: ' Referenced from: 00D89E67
+End Sub

@@ -1,0 +1,154 @@
+Private Sub cmbEql_Validate(Cancel As Boolean) 'D5681E
+  Dim var_34 As Variant
+  Dim var_38 As Variant
+  Dim var_3C As Variant
+  Dim global_00DA084C As Global
+  Dim var_124 As ComboBox
+  Dim var_4C As ComboBox
+  Dim var_134 As ComboBox
+  loc_00D568E3: Set var_34 = frmInputMod.cmbEql
+  loc_00D568F2: var_E4 = var_34
+  loc_00D5694C: If (var_34.ListIndex = 1) Then
+  loc_00D56991:   frmInputMod.txtPipes(8).Text = global_00423F6C
+  loc_00D56A47:   If (frmInputMod.optRate(1).Value = 0) Then
+  loc_00D56A67:     frmInputMod.cmbPipes.ListIndex = 0
+  loc_00D56A8D:   Else
+  loc_00D56A98:     Set var_34 = frmInputMod.txtPipes
+  loc_00D56AA6:     var_E4 = var_34
+  loc_00D56AAC:     Set var_38 = var_34(8)
+  loc_00D56AD1:     var_EC = var_38
+  loc_00D56AD9:     var_38.Text = global_004240A4
+  loc_00D56B1B:     Set var_34 = frmInputMod.cmbPipeSched
+  loc_00D56B2A:     var_E4 = var_34
+  loc_00D56B58:     Set var_38 = frmInputMod.cmbEql
+  loc_00D56B67:     var_EC = var_38
+  loc_00D56B95:     Set var_3C = frmInputMod.cmbPipes
+  loc_00D56BA4:     var_F4 = var_3C
+  loc_00D56BF5:     var_FC = (((var_3C.ListIndex = 8) And (var_38.ListIndex = 4)) And (var_34.ListIndex = 5))
+  loc_00D56C1A:     If var_FC = 0 Then
+  loc_00D56C2E:       Set var_34 = frmInputMod.cmbPipeSched
+  loc_00D56C3D:       var_E4 = var_34
+  loc_00D56C6B:       Set var_38 = frmInputMod.cmbPipeSched
+  loc_00D56C7A:       var_EC = var_38
+  loc_00D56CDB:       If ((var_38.ListIndex <> 3) And (var_34.ListIndex <> 2)) Then
+  loc_00D56CEF:         Set var_34 = frmInputMod.cmbEql
+  loc_00D56CFE:         var_E4 = var_34
+  loc_00D56D2C:         Set var_38 = frmInputMod.cmbEql
+  loc_00D56D3B:         var_EC = var_38
+  loc_00D56D9B:         If ((var_38.ListIndex <> 1) And (var_34.ListIndex)) Then
+  loc_00D56DAF:           Set var_34 = frmInputMod.cmbEql
+  loc_00D56DBE:           var_E4 = var_34
+  loc_00D56E04:           If (var_34.ListIndex <> global_00FFFFFF) Then
+  loc_00D56E2D:             var_94 = "Special valves for INERGEN are only available in Schedule 80 and Schedule 160 threaded.  Change pipe schedule for this section to Schedule 160 Threaded?"
+  loc_00D56E41:             var_4C = var_94
+  loc_00D56E58:             MsgBox(var_4C, 36, var_5C, var_6C, var_7C)
+  loc_00D56E5D:             var_20 = MsgBox(var_4C, 36, var_5C, var_6C, var_7C)
+  loc_00D56E7E:             If var_20 = 6 Then
+  loc_00D56E8E:               Set var_34 = frmInputMod.cmbPipeSched
+  loc_00D56E98:               var_E4 = var_34
+  loc_00D56EC4:             End If
+  loc_00D56EC8:             If var_20 = 7 Then
+  loc_00D56ED8:               Set var_34 = frmInputMod.cmbEql
+  loc_00D56EE2:               var_E4 = var_34
+  loc_00D56F0E:             End If
+  loc_00D56F0E:           End If
+  loc_00D56F0E:         End If
+  loc_00D56F0E:       End If
+  loc_00D56F0E:     End If
+  loc_00D56F1C:     Set var_34 = frmInputMod.cmbEql
+  loc_00D56F2B:     var_E4 = var_34
+  loc_00D56F70:     If (var_34.ListIndex) Then
+  loc_00D56F9F:       var_E4 = global_00DA084C
+  loc_00D56FA5:       var_8008 = Global.LoadResString 202, var_24
+  loc_00D56FDD:       Set var_34 = frmInputMod.cmbPipeSched
+  loc_00D56FEC:       var_EC = var_34
+  loc_00D5705C:       var_18 = CInt(((((var_34.ListIndex - 2) * 0.5) * Val(var_24)) + 1))
+  loc_00D57071:       If var_18 = 1 Then
+  loc_00D570A0:         var_E4 = global_00DA084C
+  loc_00D570A6:         var_8014 = Global.LoadResString 202, var_24
+  loc_00D570EE:         var_1C = CInt((Val(var_24) * 0.5))
+  loc_00D570FB:       End If
+  loc_00D570FB:       If var_18 > 1 Then
+  loc_00D57127:         var_8020 = Global.LoadResString 202, var_24
+  loc_00D5714E:         var_1C = CInt(Val(var_24))
+  loc_00D5715B:       End If
+  loc_00D57161:       var_A4 = var_1C
+  loc_00D5716C:       var_B4 = var_18
+  loc_00D571B7:       For %x1 = var_34.Top = var_1C To 1 Step
+  loc_00D571BE:         If %x1 = var_34.Top Then
+  loc_00D571D2:           Set var_34 = frmInputMod.cmbPipes
+  loc_00D5721B:           var_8028 = CLng(%x1 = var_34.Top)
+  loc_00D57225:           If var_8028 >= 46 Then
+  loc_00D57227:             var_802C = Err.Raise
+  loc_00D5722C:           End If
+  loc_00D57297:           If CLng(%x1 = var_34.Top) >= 46 Then
+  loc_00D57299:             var_8034 = Err.Raise
+  loc_00D5729E:           End If
+  loc_00D572AD:           var_8038 = (frmInputMod.cmbEql.Text = eax+edi*4+000000B8h)
+  loc_00D572C3:           var_A4 = var_8038 + 1
+  loc_00D5732E:           If CBool((Trim(var_34.Text) = Trim(global_00D9F04C(var_8028*4))) And var_8038 + 1) Then
+  loc_00D57338:             var_8048 = CLng(%x1 = var_34.Top)
+  loc_00D57342:             If var_8048 >= 46 Then
+  loc_00D57344:               var_804C = Err.Raise
+  loc_00D57349:             End If
+  loc_00D5737F:             Set var_34 = frmInputMod.txtPipes
+  loc_00D573EF:             var_34(8).Text = CStr(Format(Str(global_00D9F070(var_8048*4)), "#.#0"))
+  loc_00D5743E:           End If
+  loc_00D57450:         Next %x1 = var_34.Width
+  loc_00D5745A:         GoTo loc_00D571BC
+  loc_00D5745F:       End If
+  loc_00D5745F:     End If
+  loc_00D5746D:     Set var_34 = frmInputMod.cmbEql
+  loc_00D5747C:     var_E4 = var_34
+  loc_00D57541:     If ((frmInputMod.txtPipes(8).Text = global_004240A4) + 1 And (var_34.ListIndex > 0)) Then
+  loc_00D5761C:       MsgBox(frmInputMod.cmbEql.Text & " valve is not available in " & frmInputMod.cmbPipes.Text & " size", 0, 10, 10, 10)
+  loc_00D57681:       Set var_34 = frmInputMod.cmbEql
+  loc_00D57692:       var_D0 = var_34.ListCount
+  loc_00D576BF:       var_A4 = (var_D0 - 1)
+  loc_00D57700:       For %x1 = var_34.Top = (var_D0 - 1) To 1 Step var_124
+  loc_00D5771D:         If var_134 Then
+  loc_00D5772E:           Set var_34 = frmInputMod.cmbEql
+  loc_00D5774B:           var_34.ListIndex = CInt(%x1 = var_34.Top)
+  loc_00D5777E:           Set var_34 = frmInputMod.cmbEql
+  loc_00D5778C:           var_24 = var_34.Text
+  loc_00D577B0:           var_44 = var_24
+  loc_00D577C2:           var_8064 = (1 = %x1 = var_34.ForeColor)
+  loc_00D577DD:           If var_8064 = 0 Then
+  loc_00D577F1:           Next %x1 = var_34.Top
+  loc_00D577F8:           var_178 = var_134
+  loc_00D577FF:           GoTo loc_00D57713
+  loc_00D57804:         End If
+  loc_00D57842:         var_806C = Global.LoadResString 202, var_24
+  loc_00D578AF:         For %x1 = var_34.Height = 1 To Val(var_24) Step 1
+  loc_00D578C0:           If var_154 Then
+  loc_00D578D4:             Set var_34 = frmInputMod.cmbPipes
+  loc_00D5791E:             var_8070 = CLng(%x1 = var_34.Height)
+  loc_00D57928:             If var_8070 >= 46 Then
+  loc_00D5792A:               var_8074 = Err.Raise
+  loc_00D5792F:             End If
+  loc_00D5799B:             If CLng(%x1 = var_34.Height) >= 46 Then
+  loc_00D5799D:               var_807C = Err.Raise
+  loc_00D579A2:             End If
+  loc_00D579B1:             var_8080 = (frmInputMod.cmbEql.Text = eax+edi*4+000000B8h)
+  loc_00D579C7:             var_A4 = var_8080 + 1
+  loc_00D57A32:             If CBool((Trim(var_34.Text) = Trim(global_00D9F04C(var_8070*4))) And var_8080 + 1) Then
+  loc_00D57A39:               var_8090 = CLng(%x1 = var_34.Height)
+  loc_00D57A43:               If var_8090 >= 46 Then
+  loc_00D57A45:                 var_8094 = Err.Raise
+  loc_00D57A4A:               End If
+  loc_00D57A80:               Set var_34 = frmInputMod.txtPipes
+  loc_00D57AF0:               var_34(8).Text = CStr(Format(Str(global_00D9F070(var_8090*4)), "#.#0"))
+  loc_00D57B3A:             End If
+  loc_00D57B4F:           Next %x1 = var_34.Enabled
+  loc_00D57B56:           GoTo loc_00D578BE
+  loc_00D57B5B:         End If
+  loc_00D57B72:         frmInputMod.cmbEql.ListIndex = 0
+  loc_00D57BD9:         frmInputMod.txtPipes(8).Text = global_004240A4
+  loc_00D57C07:       End If
+  loc_00D57C07:     End If
+  loc_00D57C07:   End If
+  loc_00D57C07: End If
+  loc_00D57C14: GoTo loc_00D57C62
+  loc_00D57C61: Exit Sub
+  loc_00D57C62: ' Referenced from: 00D57C14
+End Sub
